@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<style>
+    form{
+        width: 30%;
+        margin: 5px auto;
+    }
+    input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  
+}
+
+h1,h2{
+    text-align: center;
+}
+
+</style>
+<body>
+    <h1>SEARCH HERE</h1>
+    <div>
+  <form action="/ifsc" method="post" id="form">
+    <label for="ifsc">First Name</label>
+    <input type="text" id="ifsc" name="ifsc" placeholder="IFSC CODE...">
+    <input type="submit" value="Get info">
+  </form>
+</div>
+<div class="detail">
+    <h2>{{heading}}</h2>
+
+    <table id="customers">
+  <tr>
+    <th>District</th>
+    <th>Branch</th>
+    <th>Micr Code</th>
+    <th>State</th>
+    <th>Address</th>
+    <th>upi</th>
+    <th>Bank</th>
+    <th>Bank code</th>
+  </tr>
+  <tr>
+      <td>{{response.DISTRICT}}</td>
+      <td>{{response.BRANCH}}</td>
+      <td>{{response.MICR}}</td>
+      <td>{{response.STATE}}</td>
+      <td>{{response.ADDRESS}}</td>
+      <td>{{response.UPI}}</td>
+      <td>{{response.BANK}}</td>
+      <td>{{response.BANKCODE}}</td>
+
+  </tr>
+
+</table>
+</div>
+</body>
+</html>
